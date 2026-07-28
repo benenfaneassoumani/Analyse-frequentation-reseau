@@ -1,11 +1,11 @@
 # 🚌 Analyse fréquentation réseau
 
-Analyse de la fréquentation d'un réseau de transport public (réseau STAR, Rennes — opéré par Keolis) afin d'identifier les heures de pointe, les heures creuses et les lignes stratégiques, pour aider à l'ajustement de l'offre de bus.
+Analyse de la fréquentation d'un réseau de transport public  afin d'identifier les heures de pointe, les heures creuses et les lignes stratégiques, pour aider à l'ajustement de l'offre de bus.
 
 ## Contexte et problématique
 
 
-**Objectif métier :** Comprendre combien de personnes voyagent, sur quelles lignes et à quelles heures, afin d'aider l'entreprise à décider s'il faut renforcer ou réduire l'offre de bus sur un trajet spécifique — pour réduire les coûts d'exploitation en heures creuses tout en évitant la saturation et les pénalités de retard en heures de pointe.
+**Objectif métier :** Comprendre combien de personnes voyagent, sur quelles lignes et à quelles heures, afin d'aider l'entreprise à décider s'il faut renforcer ou réduire l'offre de bus sur un trajet spécifique pour réduire les coûts d'exploitation en heures creuses tout en évitant la saturation et les pénalités de retard en heures de pointe.
 
 **Question centrale :** À quels moments et sur quelles lignes faut-il ajuster l'offre de transport pour répondre à la demande réelle des voyageurs ?
 
@@ -36,8 +36,8 @@ Données de fréquentation détaillées du réseau STAR (Keolis Rennes), issues 
    - Connexion à SQL Server (table `frequentation_star`)
    - Création de mesures DAX (`Total Passagers`, `Heure de Pointe`, `Heure Creuse`, `Ligne Top`) recalculées dynamiquement selon le contexte de filtre
    - Ajout de deux segments interactifs :
-     - Par **ligne** (`NomCourtLigne`) — isoler une ligne précise pour voir son propre profil de fréquentation
-     - Par **jour** (`DateFreq`) — explorer la dynamique hebdomadaire directement dans le dashboard (comparer un jour à un autre)
+     - Par **ligne** (`NomCourtLigne`) :isoler une ligne précise pour voir son propre profil de fréquentation
+     - Par **jour** (`DateFreq`) : explorer la dynamique hebdomadaire directement dans le dashboard (comparer un jour à un autre)
    - Tableau de bord avec cartes KPI dynamiques, courbe de fréquentation horaire et classement des lignes, entièrement recalculés selon les segments sélectionnés
 
 ## 📈 Principaux résultats
@@ -57,9 +57,9 @@ Données de fréquentation détaillées du réseau STAR (Keolis Rennes), issues 
 
 ##  Stack technique
 
-- **Power Query (Excel)** — nettoyage et préparation des données
-- **SQL Server / T-SQL** — structuration, conversion de types, requêtes d'agrégation métier
-- **Power BI / DAX** — tableau de bord interactif (KPI dynamiques, courbe temporelle, classement par ligne, segment)
+- **Power Query (Excel)** : nettoyage et préparation des données
+- **SQL Server / T-SQL** : structuration, conversion de types, requêtes d'agrégation métier
+- **Power BI / DAX** : tableau de bord interactif (KPI dynamiques, courbe temporelle, classement par ligne, segment)
 
 ##  Mesures DAX clés
 
