@@ -58,7 +58,7 @@ Données de fréquentation détaillées du réseau STAR (Keolis Rennes), issues 
 ##  Stack technique
 
 - **Power Query (Excel)** : nettoyage et préparation des données
-- **SQL Server / T-SQL** : structuration, conversion de types, requêtes d'agrégation métier
+- **SQL Server** : structuration, conversion de types, requêtes d'agrégation métier
 - **Power BI / DAX** : tableau de bord interactif (KPI dynamiques, courbe temporelle, classement par ligne, segment)
 
 ##  Mesures DAX clés
@@ -103,7 +103,7 @@ RETURN
     MAXX(LigneMax, frequentation_star[NomCourtLigne])
 ```
 
-*(la mesure `Heure Creuse` suit la même logique que `Heure de Pointe`, avec un tri croissant)*
+
 
 ##  Aperçu du tableau de bord
 
