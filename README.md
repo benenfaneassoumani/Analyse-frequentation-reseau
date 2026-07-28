@@ -2,19 +2,18 @@
 
 Analyse de la fréquentation d'un réseau de transport public (réseau STAR, Rennes — opéré par Keolis) afin d'identifier les heures de pointe, les heures creuses et les lignes stratégiques, pour aider à l'ajustement de l'offre de bus.
 
-## 🎯 Contexte et problématique
+## Contexte et problématique
 
-**Acteur :** Keolis, opérateur du réseau de transport STAR à Rennes.
 
 **Objectif métier :** Comprendre combien de personnes voyagent, sur quelles lignes et à quelles heures, afin d'aider l'entreprise à décider s'il faut renforcer ou réduire l'offre de bus sur un trajet spécifique — pour réduire les coûts d'exploitation en heures creuses tout en évitant la saturation et les pénalités de retard en heures de pointe.
 
 **Question centrale :** À quels moments et sur quelles lignes faut-il ajuster l'offre de transport pour répondre à la demande réelle des voyageurs ?
 
-## 🗂️ Source des données
+##  Source des données
 
 Données de fréquentation détaillées du réseau STAR (Keolis Rennes), issues du portail Open Data [data.explore.star.fr](https://data.explore.star.fr) — extrait sur une semaine (décembre 2022), au pas de 15 minutes, par arrêt, ligne, sens et créneau horaire.
 
-## 🔧 Pipeline de traitement des données
+##  Pipeline de traitement des données
 
 1. **Nettoyage (Excel / Power Query)**
    - Sélection des colonnes utiles (`DateFreq`, `TrancheHoraire15mn`, `NomArret`, `NomCourtLigne`, `Sens`, `Frequentation`)
@@ -56,13 +55,13 @@ Données de fréquentation détaillées du réseau STAR (Keolis Rennes), issues 
 - **Optimiser les coûts** en ajustant la fréquence des bus entre 10h et 14h, période à faible demande.
 - **Prioriser les investissements** sur les lignes de métro (a, b) et les lignes Chronostar (C4, C1), qui concentrent l'essentiel du trafic.
 
-## 🛠️ Stack technique
+##  Stack technique
 
 - **Power Query (Excel)** — nettoyage et préparation des données
 - **SQL Server / T-SQL** — structuration, conversion de types, requêtes d'agrégation métier
 - **Power BI / DAX** — tableau de bord interactif (KPI dynamiques, courbe temporelle, classement par ligne, segment)
 
-## ⚡ Mesures DAX clés
+##  Mesures DAX clés
 
 Les 4 indicateurs du tableau de bord sont pilotés par des mesures DAX plutôt que par des colonnes statiques, afin de rester interactifs avec le segment par ligne :
 
@@ -94,13 +93,13 @@ RETURN
 
 *(la mesure `Heure Creuse` suit la même logique que `Heure de Pointe`, avec un tri croissant)*
 
-## 🖼️ Aperçu du tableau de bord
+##  Aperçu du tableau de bord
 
 ![Dashboard Power BI](images/dashboard_screenshot.png)
 
 Une démonstration vidéo de l'interactivité du dashboard (segments par ligne et par jour) est disponible dans `demo/dashboard_demo.mp4`.
 
-## 📁 Structure du repository
+##  Structure du repository
 
 ```
 ├── data/
@@ -118,5 +117,5 @@ Une démonstration vidéo de l'interactivité du dashboard (segments par ligne e
 
 ## 👤 Auteur
 
-Ben-Enfane Assoumani — Étudiant en Master 1 Statistique et Sciences des Données, Université de Montpellier
+Ben-enfane Assoumani — Étudiant en Master  Statistique et Sciences des Données, Université de Montpellier
 [LinkedIn](https://www.linkedin.com/in/ben-enfaneassoumani)
