@@ -79,6 +79,18 @@ VAR HeureMax = TOPN(1, TableParHeure, [Total], DESC)
 RETURN
     MAXX(HeureMax, frequentation_star[Heure]) & "h"
 
+Heure Creuse = 
+VAR TableParHeure = 
+    SUMMARIZE(
+        frequentation_star,
+        frequentation_star[Heure],
+        "Total", SUM(frequentation_star[Frequentation])
+    )
+VAR HeureMin = TOPN(1, TableParHeure, [Total], ASC)
+RETURN
+    MAXX(HeureMin, frequentation_star[Heure]) & "h"
+
+
 Ligne Top = 
 VAR TableParLigne = 
     SUMMARIZE(
